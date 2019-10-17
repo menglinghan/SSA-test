@@ -19,6 +19,7 @@ int main(){
 ```
 接下来使用在LLVM的bin文件夹下使用命令：
 >clang -S -emit-llvm test.c -o test.ll<br>
+
 可发现在文件夹中自动生成了一个ll文件，即LLVM的转换结果。
 ## 结果分析
 ```c
@@ -48,6 +49,7 @@ define dso_local i32 @main() #0 {
 }
 ```
 源码对应的中间表示如上所示，可以发现源码中i对应的%3被赋值了两次：
->store i32 0, i32* %3, align 4
+>store i32 0, i32* %3, align 4<br>
 >store i32 %9, i32* %3, align 4<br>
+
 因此，可以看出没有完全被转换为SSA，相应的x对应的%2只有一次赋值，满足SSA转换。
