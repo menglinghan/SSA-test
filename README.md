@@ -22,7 +22,7 @@ int main(){
 
 可发现在文件夹中自动生成了一个ll文件，即LLVM的转换结果。
 ## 结果分析
-```bash
+```python
 define dso_local i32 @main() #0 {
   %1 = alloca i32, align 4
   %2 = alloca i32, align 4
